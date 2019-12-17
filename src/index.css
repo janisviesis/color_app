@@ -47,6 +47,5 @@ button:hover {
     height: 100vh;
     width: auto;
     overflow: scroll;
-    max-height: 100%;
     touch-action: pan-up pan-down;
 }
