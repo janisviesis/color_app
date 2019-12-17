@@ -45,6 +45,7 @@ button:hover {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    max-height: 100%;
     width: auto;
     overflow: scroll;
     touch-action: pan-up pan-down;
