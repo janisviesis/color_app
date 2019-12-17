@@ -150,13 +150,16 @@ function addFinal() {
         }
 
         finalItem = `
+        <div id="final">
+            <img src='${randImage.urls.regular}' alt='${searchedForText}'>
             <button onClick="document.location.reload(true)">
                 Play Again!
             </button>
+        <div>
         `;
 
         body.innerHTML = finalItem;
-        body.style.backgroundImage = `url(${randImage.urls.regular})`;
+        // body.style.backgroundImage = `url(${randImage.urls.regular})`;
     };
 
     navigator.vibrate([200, 200, 200, 200, 100, 100, 100, 100, 100, 300,
