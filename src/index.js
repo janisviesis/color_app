@@ -37,16 +37,19 @@ function dragElement(dinamic) {
     pos3 = 0;
     pos4 = 0;
     
+    dinamic.ontouchstart = dragMouseDown
     dinamic.onmousedown = dragMouseDown;
 
     function dragMouseDown(e) {
         e = e || window.event;
         e.preventDefault();
         // get the mouse cursor position at startup:
-        pos3 = e.clientX;
-        pos4 = e.clientY;
+        pos3 = e.clientX || e.touches[0].clientX;
+        pos4 = e.clientY || e.touches[0].clientY;
         document.onmouseup = closeDragElement;
+        document.ontouchend = closeDragElement;
         // call a function whenever the cursor moves:
+        document.ontouchmove = elementDrag;
         document.onmousemove = elementDrag;
     }
     
@@ -54,10 +57,21 @@ function dragElement(dinamic) {
         e = e || window.event;
         e.preventDefault();
         // calculate the new cursor position:
-        pos1 = pos3 - e.clientX;
-        pos2 = pos4 - e.clientY;
-        pos3 = e.clientX;
-        pos4 = e.clientY;
+        if (e.type === "touchmove") {
+            e.preventDefault();
+
+            pos1 = pos3 - e.touches[0].clientX;
+            pos2 = pos4 - e.touches[0].clientY;
+            pos3 = e.touches[0].clientX;
+            pos4 = e.touches[0].clientY;
+
+        } else {
+
+            pos1 = pos3 - e.clientX;
+            pos2 = pos4 - e.clientY;
+            pos3 = e.clientX;
+            pos4 = e.clientY;
+        }
 
         // validation
         bckg = dinamic.style.backgroundColor;
@@ -85,7 +99,9 @@ function dragElement(dinamic) {
     function closeDragElement() {
         /* stop moving when mouse button is released:*/
         document.onmouseup = null;
+        document.ontouchend = null;
         document.onmousemove = null;
+        document.ontouchmove = null;
 
         countIdle = document.querySelectorAll(".idle").length;
     
