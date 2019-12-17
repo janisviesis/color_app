@@ -18,7 +18,8 @@ code {
 }
 
 img {
-    min-height: 100vh;
+    height: 100vh;
+    width: auto;
 }
 
 button {
