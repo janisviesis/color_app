@@ -7,7 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #333;
   height: 100vh;
-  min-height: 500px;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -18,7 +17,8 @@ code {
 }
 
 img {
-    height: 100%;
+    min-height: 500px;
+    height: 100vh;
     width: auto;
 }
 
