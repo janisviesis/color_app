@@ -82,15 +82,28 @@ function dragElement(dinamic) {
         arr = styles[id].border.split(" ");
         stat = "stat" + id;
 
-        if (pos3 > 20 && pos3 < 80
-            && pos4 > (top + 20) && pos4 < (top + 80)
-            && bckg === arr[2]) {
-            
-            dinamic.style.display = "none";
-            document.getElementById(stat).style.backgroundColor = bckg;
-            dinamic.classList.remove("idle");
-            
+        if (e.type === "touchmove") {
+
+            if (e.touches[0].pageX > 20 && e.touches[0].pageX < 80
+                &&e.touches[0].pageY > (top + 20)
+                && e.touches[0].pageY < (top + 80) && bckg === arr[2]) {
+                
+                dinamic.style.display = "none";
+                document.getElementById(stat).style.backgroundColor = bckg;
+                dinamic.classList.remove("idle"); 
+            }
+        } else {
+
+            if (e.pageX > 20 && e.pageX < 80
+                && e.pageY > (top + 20) && e.pageY < (top + 80)
+                && bckg === arr[2]) {
+                
+                dinamic.style.display = "none";
+                document.getElementById(stat).style.backgroundColor = bckg;
+                dinamic.classList.remove("idle");
+            }
         }
+        
         // set the element's new position:
         dinamic.style.top = (dinamic.offsetTop - pos2) + "px";
         dinamic.style.left = (dinamic.offsetLeft - pos1) + "px";
