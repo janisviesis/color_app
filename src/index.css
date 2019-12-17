@@ -21,7 +21,7 @@ code {
 img {
     min-height: 500px;
     height: 100vh;
-    width: auto;
+    width: 100%;
 }
 
 button {
