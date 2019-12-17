@@ -1,6 +1,6 @@
 import colors from './colors';
 
-const diameter = 40;
+const diameter = 50;
 const d = 90;
 
 let styles = [];
@@ -14,7 +14,7 @@ for (i = 0; i < colors.length; i++) {
 
     maxY = colors.length * 90 - diameter;
 
-    x = Math.floor(Math.random() * 70);
+    x = Math.floor(Math.random() * 60);
     y = diameter + Math.floor(Math.random() * (maxY - diameter));
 
     style = {
