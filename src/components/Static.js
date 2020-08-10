@@ -8,7 +8,7 @@ function Static() {
         styles.map((style, i) => (
             <React.Fragment key={i}>
                 <div style={style} id={"stat"+i}>
-                    <i className="fas fa-tree fa-3x"></i>
+                    <i className="fas fa-child fa-3x"></i>
                 </div>
             </React.Fragment>
         ))

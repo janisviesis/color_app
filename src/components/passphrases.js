@@ -1,7 +1,6 @@
 const passPhrases = [
     
-    "gift", "gifts", "gifts presents", "christmas","christmas pet",
-    "christmas tree"
+    "cat", "cats", "kitten", "kittens", "dog", "dogs", "puppy", "puppies"
 ];
 
 export default passPhrases;
