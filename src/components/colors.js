@@ -1,6 +1,6 @@
 const colors = [
     
-    "green", "yellow", "blue", "red", "purple"
+    "grey", "yellow", "blue", "red", "purple"
 ];
 
 export default colors;
